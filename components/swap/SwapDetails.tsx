@@ -26,7 +26,7 @@ export function SwapDetails({
 
   const impact = priceData.estimatedPriceImpact ? Number(priceData.estimatedPriceImpact) : null;
   const impactTone =
-    impact === null ? "text-ivory-muted" : impact > 3 ? "text-danger-500" : impact > 1 ? "text-amber-400" : "text-success-500";
+    impact === null ? "text-ink-muted" : impact > 3 ? "text-danger-500" : impact > 1 ? "text-amber-700" : "text-success-500";
 
   const networkFee =
     priceData.gas && priceData.gasPrice
@@ -51,8 +51,8 @@ export function SwapDetails({
 function Row({ label, value, valueClassName }: { label: string; value: string; valueClassName?: string }) {
   return (
     <div className="flex items-center justify-between gap-3">
-      <span className="text-ivory-faint">{label}</span>
-      <span className={cn("font-tabular font-medium text-ivory", valueClassName)}>{value}</span>
+      <span className="text-ink-faint">{label}</span>
+      <span className={cn("font-tabular font-medium text-ink", valueClassName)}>{value}</span>
     </div>
   );
 }

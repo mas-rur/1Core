@@ -1,6 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
+import { Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import { TokenBadge } from "@/components/ui/TokenBadge";
 import type { Token } from "@/lib/tokens";
@@ -34,7 +35,7 @@ export function TokenSelectModal({
     <AnimatePresence>
       {open && (
         <motion.div
-          className="fixed inset-0 z-50 flex items-end justify-center bg-ink-950/70 backdrop-blur-sm sm:items-center"
+          className="fixed inset-0 z-50 flex items-end justify-center bg-ink/40 backdrop-blur-sm sm:items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -50,28 +51,29 @@ export function TokenSelectModal({
           >
             <div className="border-b border-surface-700 p-4">
               <div className="mb-3 flex items-center justify-between">
-                <h2 className="font-display text-base font-semibold text-ivory">Select a token</h2>
+                <h2 className="font-display text-base font-semibold text-ink">Select a token</h2>
                 <button
                   onClick={onClose}
-                  className="rounded-full p-1.5 text-ivory-muted transition-colors hover:bg-surface-700 hover:text-ivory"
+                  className="rounded-full p-1.5 text-ink-muted transition-colors hover:bg-surface-700 hover:text-ink"
                   aria-label="Close"
                 >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M2 2l12 12M14 2L2 14" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                  </svg>
+                  <X size={16} strokeWidth={1.8} />
                 </button>
               </div>
-              <input
-                autoFocus
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search name or symbol"
-                className="w-full rounded-xl2 border border-surface-600 bg-surface-800 px-3.5 py-2.5 text-sm text-ivory placeholder:text-ivory-faint focus:border-core-500 focus:outline-none"
-              />
+              <div className="relative">
+                <Search size={15} strokeWidth={2} className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-faint" />
+                <input
+                  autoFocus
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search name or symbol"
+                  className="w-full rounded-xl2 border border-surface-600 bg-surface-800 py-2.5 pl-9 pr-3.5 text-sm text-ink placeholder:text-ink-faint focus:border-core-500 focus:outline-none"
+                />
+              </div>
             </div>
             <div className="max-h-[50vh] overflow-y-auto p-2">
               {filtered.length === 0 && (
-                <p className="px-3 py-6 text-center text-sm text-ivory-muted">No tokens match &ldquo;{query}&rdquo;.</p>
+                <p className="px-3 py-6 text-center text-sm text-ink-muted">No tokens match &ldquo;{query}&rdquo;.</p>
               )}
               {filtered.map((token) => (
                 <button
@@ -87,8 +89,8 @@ export function TokenSelectModal({
                 >
                   <TokenBadge token={token} size={34} />
                   <div>
-                    <p className="text-sm font-medium text-ivory">{token.symbol}</p>
-                    <p className="text-xs text-ivory-muted">{token.name}</p>
+                    <p className="text-sm font-medium text-ink">{token.symbol}</p>
+                    <p className="text-xs text-ink-muted">{token.name}</p>
                   </div>
                 </button>
               ))}

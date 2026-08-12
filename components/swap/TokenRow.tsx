@@ -1,5 +1,6 @@
 "use client";
 
+import { ChevronDown } from "lucide-react";
 import { parseUnits } from "viem";
 import { useAccount, useBalance } from "wagmi";
 import { TokenBadge } from "@/components/ui/TokenBadge";
@@ -39,7 +40,7 @@ export function TokenRow({
   return (
     <div className="rounded-xl2 border border-surface-700 bg-surface-800/60 p-4 transition-colors focus-within:border-core-500/60">
       <div className="mb-2 flex items-center justify-between text-xs">
-        <span className="font-medium uppercase tracking-wide text-ivory-faint">{label}</span>
+        <span className="font-medium uppercase tracking-wide text-ink-faint">{label}</span>
         {address && (
           <button
             type="button"
@@ -53,13 +54,13 @@ export function TokenRow({
               onAmountChange?.(formatAmount(max, balance.decimals, 8));
             }}
             className={cn(
-              "font-tabular text-ivory-muted transition-colors",
-              !readOnly && onAmountChange && balance && "hover:text-core-300"
+              "font-tabular text-ink-muted transition-colors",
+              !readOnly && onAmountChange && balance && "hover:text-core-700"
             )}
           >
             Balance: {balance ? formatAmount(balance.value, balance.decimals, 6) : "0"}
             {!readOnly && onAmountChange && balance ? (
-              <span className="ml-1.5 rounded bg-core-700/30 px-1.5 py-0.5 text-[10px] font-semibold text-core-300">
+              <span className="ml-1.5 rounded bg-core-700 px-1.5 py-0.5 text-[10px] font-semibold text-white">
                 MAX
               </span>
             ) : null}
@@ -78,24 +79,22 @@ export function TokenRow({
             if (/^\d*\.?\d*$/.test(v)) onAmountChange?.(v);
           }}
           className={cn(
-            "font-tabular w-full min-w-0 bg-transparent font-display text-3xl font-medium text-ivory placeholder:text-ivory-faint focus:outline-none",
+            "font-tabular w-full min-w-0 bg-transparent font-display text-3xl font-medium text-ink placeholder:text-ink-faint focus:outline-none",
             loading && "shimmer-text"
           )}
         />
         <button
           type="button"
           onClick={onOpenSelect}
-          className="flex shrink-0 items-center gap-2 rounded-full border border-surface-600 bg-surface-700/70 py-1.5 pl-1.5 pr-3 transition-colors hover:border-core-500/50"
+          className="flex shrink-0 items-center gap-2 rounded-full border border-surface-600 bg-surface-900 py-1.5 pl-1.5 pr-3 shadow-hairline transition-colors hover:border-core-500/50"
         >
           <TokenBadge token={token} size={26} />
-          <span className="text-sm font-semibold text-ivory">{token.symbol}</span>
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-            <path d="M2.5 4.5L6 8l3.5-3.5" stroke="#8A93A6" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+          <span className="text-sm font-semibold text-ink">{token.symbol}</span>
+          <ChevronDown size={13} strokeWidth={2} className="text-ink-faint" />
         </button>
       </div>
 
-      <div className="mt-1.5 h-4 text-xs text-ivory-muted">{usdValue}</div>
+      <div className="mt-1.5 h-4 text-xs text-ink-muted">{usdValue}</div>
     </div>
   );
 }

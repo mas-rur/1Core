@@ -2,6 +2,7 @@
 
 import { useConnectModal } from "@rainbow-me/rainbowkit";
 import { motion } from "framer-motion";
+import { ArrowUpDown } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { useAccount, useBalance } from "wagmi";
 import { StatusModal } from "@/components/feedback/StatusModal";
@@ -106,7 +107,7 @@ export function SwapCard() {
         className="relative rounded-xl3 border border-surface-700 bg-surface-900/90 p-5 shadow-card backdrop-blur-xl sm:p-6"
       >
         <div className="mb-4 flex items-center justify-between">
-          <h1 className="font-display text-base font-semibold text-ivory">Swap</h1>
+          <h1 className="font-display text-base font-semibold text-ink">Swap</h1>
           <SettingsPopover
             slippageBps={engine.slippageBps}
             setSlippageBps={engine.setSlippageBps}
@@ -129,17 +130,9 @@ export function SwapCard() {
               whileTap={{ scale: 0.92 }}
               onClick={flipTokens}
               aria-label="Flip tokens"
-              className="rounded-full border-4 border-surface-900 bg-surface-700 p-2 text-ivory shadow-glow transition-colors hover:bg-core-700"
+              className="rounded-full border-4 border-surface-900 bg-surface-700 p-2 text-ink shadow-glow transition-colors hover:bg-core-700 hover:text-white"
             >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M4 6l3-3 3 3M7 3v10M12 10l-3 3-3-3"
-                  stroke="currentColor"
-                  strokeWidth="1.4"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              <ArrowUpDown size={16} strokeWidth={1.8} />
             </motion.button>
           </div>
 
@@ -181,14 +174,14 @@ export function SwapCard() {
           className={cn(
             "mt-4 w-full rounded-xl2 py-3.5 text-sm font-semibold transition-colors",
             ctaDisabled
-              ? "cursor-not-allowed bg-surface-700 text-ivory-faint"
+              ? "cursor-not-allowed bg-surface-700 text-ink-faint"
               : "bg-core-700 text-white shadow-glow hover:bg-core-600"
           )}
         >
           {ctaLabel}
         </motion.button>
 
-        <p className="mt-3 text-center text-[11px] text-ivory-faint">
+        <p className="mt-3 text-center text-[11px] text-ink-faint">
           Routed across 100+ liquidity sources by 0x · Best price, every time.
         </p>
       </motion.div>
