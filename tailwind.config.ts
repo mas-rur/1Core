@@ -6,42 +6,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
-          950: "#05070D",
-          900: "#080B14",
-          800: "#0C1120",
+        // Page-level background scale — warm paper, never stark/cold white.
+        paper: {
+          DEFAULT: "#FFFFFF",
+          subtle: "#FBFAF7",
+          muted: "#F2F0E9",
         },
+        // Card fills, hairline borders and dividers.
         surface: {
-          900: "#0F1420",
-          800: "#141B2E",
-          700: "#1B2436",
-          600: "#26314A",
-          500: "#33405D",
+          900: "#FFFFFF",
+          800: "#FCFBF7",
+          700: "#EDEAE1",
+          600: "#DCD7C9",
+          500: "#B7B2A2",
         },
+        // Brand accent — the "core", now pure black/graphite instead of blue.
         core: {
-          950: "#04152E",
-          900: "#082A5C",
-          800: "#0B3A80",
-          700: "#0D47A1", // brand — 1Core primary
-          600: "#1257C4",
-          500: "#2F6FED", // glow / interactive accent
-          400: "#5A8DF2",
-          300: "#8FB2F7",
-          200: "#C2D6FB",
-          100: "#E4EDFD",
+          950: "#000000",
+          900: "#0A0A09",
+          800: "#161613",
+          700: "#131311", // primary — buttons, CTAs
+          600: "#2B2A26", // hover
+          500: "#464540", // interactive mid-tone
+          400: "#6E6C63",
+          300: "#8F8C81", // muted accent labels
+          200: "#C6C2B4",
+          100: "#EFEDE5",
         },
         success: {
-          500: "#22C55E",
-          600: "#16A34A",
+          500: "#15803D",
+          600: "#116932",
         },
         danger: {
-          500: "#EF4444",
-          600: "#DC2626",
+          500: "#C0362A",
+          600: "#A32C21",
         },
-        ivory: {
-          DEFAULT: "#F3F5FA",
-          muted: "#8A93A6",
-          faint: "#4C5670",
+        // Text scale — "ink" on paper.
+        ink: {
+          DEFAULT: "#141310",
+          muted: "#6B6860",
+          faint: "#A29D90",
         },
       },
       fontFamily: {
@@ -54,9 +58,13 @@ const config: Config = {
         xl3: "1.75rem",
       },
       boxShadow: {
-        glow: "0 0 0 1px rgba(47,111,237,0.18), 0 8px 40px -8px rgba(13,71,161,0.55)",
-        "glow-lg": "0 0 0 1px rgba(47,111,237,0.22), 0 20px 80px -12px rgba(13,71,161,0.65)",
-        card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 24px 60px -20px rgba(0,0,0,0.65)",
+        glow: "0 0 0 1px rgba(20,19,16,0.06), 0 10px 28px -10px rgba(20,19,16,0.28)",
+        "glow-lg": "0 0 0 1px rgba(20,19,16,0.07), 0 24px 64px -16px rgba(20,19,16,0.32)",
+        card: "0 1px 0 0 rgba(255,255,255,0.6) inset, 0 2px 4px rgba(20,19,16,0.03), 0 24px 48px -24px rgba(20,19,16,0.18)",
+        hairline: "0 0 0 1px rgba(20,19,16,0.08)",
+      },
+      backgroundImage: {
+        grain: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22 stitchTiles=%22stitch%22/><feColorMatrix type=%22matrix%22 values=%220 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')",
       },
       keyframes: {
         drift: {
