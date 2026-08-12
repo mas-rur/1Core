@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
+import { IBM_Plex_Mono, IBM_Plex_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
@@ -9,7 +9,7 @@ const display = Space_Grotesk({
   variable: "--font-display",
 });
 
-const body = Inter({
+const body = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-body",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#05070D",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };

@@ -8,20 +8,20 @@
   }
 
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 
   body {
-    @apply bg-ink-950 text-ivory font-body antialiased;
+    @apply bg-paper text-ink font-body antialiased;
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   ::selection {
-    @apply bg-core-500/30 text-white;
+    @apply bg-core-700/10 text-core-900;
   }
 
   :focus-visible {
-    @apply outline-none ring-2 ring-core-400 ring-offset-2 ring-offset-ink-950;
+    @apply outline-none ring-2 ring-core-700 ring-offset-2 ring-offset-paper;
   }
 
   ::-webkit-scrollbar {
@@ -51,7 +51,7 @@
   }
 
   .shimmer-text {
-    background: linear-gradient(90deg, #4c5670 25%, #f3f5fa 50%, #4c5670 75%);
+    background: linear-gradient(90deg, #c9c5b8 25%, #131311 50%, #c9c5b8 75%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -60,9 +60,13 @@
   }
 
   .mesh-glow {
-    background: radial-gradient(circle at 30% 20%, rgba(13, 71, 161, 0.55), transparent 55%),
-      radial-gradient(circle at 75% 75%, rgba(47, 111, 237, 0.35), transparent 50%),
-      radial-gradient(circle at 20% 80%, rgba(11, 58, 128, 0.4), transparent 45%);
+    background: radial-gradient(circle at 30% 15%, rgba(20, 19, 16, 0.05), transparent 55%),
+      radial-gradient(circle at 78% 68%, rgba(20, 19, 16, 0.035), transparent 50%),
+      radial-gradient(circle at 15% 80%, rgba(20, 19, 16, 0.04), transparent 45%);
+  }
+
+  .grain-overlay {
+    background-image: theme("backgroundImage.grain");
   }
 }
 
