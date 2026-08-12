@@ -14,13 +14,13 @@ export function PendingAnimation() {
         animate={{ rotate: 360 }}
         transition={{ duration: 1.4, repeat: Infinity, ease: "linear" }}
       >
-        <circle cx="50" cy="50" r="45" fill="none" stroke="#1B2436" strokeWidth="5" />
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#E7E4DA" strokeWidth="5" />
         <circle
           cx="50"
           cy="50"
           r="45"
           fill="none"
-          stroke="#2F6FED"
+          stroke="#141310"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray="60 223"

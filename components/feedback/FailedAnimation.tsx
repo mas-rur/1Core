@@ -10,13 +10,13 @@ export function FailedAnimation() {
       transition={{ duration: 0.5, delay: 0.35 }}
     >
       <svg viewBox="0 0 100 100" width={112} height={112}>
-        <circle cx="50" cy="50" r="45" fill="none" stroke="#1B2436" strokeWidth="5" />
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#E7E4DA" strokeWidth="5" />
         <circle
           cx="50"
           cy="50"
           r="45"
           fill="none"
-          stroke="#EF4444"
+          stroke="#C0362A"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray="283"
@@ -27,7 +27,7 @@ export function FailedAnimation() {
         <motion.path
           d="M37 37l26 26M63 37L37 63"
           fill="none"
-          stroke="#EF4444"
+          stroke="#C0362A"
           strokeWidth="6"
           strokeLinecap="round"
           initial={{ pathLength: 0, opacity: 0 }}

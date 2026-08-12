@@ -20,13 +20,13 @@ export function SuccessAnimation() {
         />
       ))}
       <svg viewBox="0 0 100 100" width={112} height={112}>
-        <circle cx="50" cy="50" r="45" fill="none" stroke="#1B2436" strokeWidth="5" />
+        <circle cx="50" cy="50" r="45" fill="none" stroke="#E7E4DA" strokeWidth="5" />
         <circle
           cx="50"
           cy="50"
           r="45"
           fill="none"
-          stroke="#22C55E"
+          stroke="#15803D"
           strokeWidth="5"
           strokeLinecap="round"
           strokeDasharray="283"
@@ -37,7 +37,7 @@ export function SuccessAnimation() {
         <motion.path
           d="M32 52l13 13 24-27"
           fill="none"
-          stroke="#22C55E"
+          stroke="#15803D"
           strokeWidth="6"
           strokeLinecap="round"
           strokeLinejoin="round"
