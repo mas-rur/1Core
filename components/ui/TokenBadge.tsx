@@ -9,8 +9,8 @@ export function TokenBadge({ token, size = 32, className }: { token: Token; size
         width: size,
         height: size,
         fontSize: size * 0.36,
-        background: `linear-gradient(135deg, ${token.tint}CC, ${token.tint}55)`,
-        boxShadow: `0 0 0 1px ${token.tint}40 inset`,
+        background: `linear-gradient(135deg, ${token.tint}, ${token.tint}CC)`,
+        boxShadow: `0 0 0 1px rgba(20,19,16,0.08), 0 1px 2px rgba(20,19,16,0.12)`,
       }}
     >
       {token.symbol.slice(0, 2).toUpperCase()}
